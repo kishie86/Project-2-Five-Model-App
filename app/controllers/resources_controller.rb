@@ -3,7 +3,38 @@ class ResourcesController < ActionController::Base
        @resources = Resource.all 
     end
 
+    def show
+        @resource = Resource.find(params[:id])
+    end
+
     def new
         @resource = Resource.new
     end
+
+    def create 
+        @resource = Resource.create(resource_params)
+        redirect_to 
+    end
+
+    def edit
+        @resource = Resource.find(params[:id])
+    end 
+
+    def update
+        @resource = Resource.find_by(id: params[:id])
+         @resource.update(resource_params)
+         redirect_to 
+    end
+
+    def destroy
+        @resource = Resource.find_by(id: params[:id])
+         @resource.destroy
+         redirect_to 
+    end
+
+    def resource_params
+       params.require(:resource).permit(:website_domain, :notes, :goal_id, :user_id)
+    end
+
+    
 end
