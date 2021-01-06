@@ -1,0 +1,12 @@
+<%= form_for @goal do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    
+    <%= f.label :journal_id %>
+    <%= f.collection_select :journal_id, Journal.all, :id, :name %>
+    
+    <%= f.submit %>
+  <% end %>
