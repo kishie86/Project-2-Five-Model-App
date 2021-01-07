@@ -1,0 +1,9 @@
+<h1>Hello</h1>
+
+<ul>
+<%@goals.each do | g |%>
+    <li>
+        <%= link_to g.name, goal_path(g)%>
+    </li>
+    <%end%>
+</ul>

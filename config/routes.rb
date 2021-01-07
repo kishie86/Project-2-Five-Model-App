@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy', as: 'logout'
   get '/', to: 'home#index', as: 'home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :journals
+  resources :goals
   resources :micro_goals
   resources :resources
 end

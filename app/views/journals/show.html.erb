@@ -1,0 +1,18 @@
+<h1>Welcome to <%= @journal.name%>'s Journal</h1>
+
+<br/>
+
+<h2>  <%= @journal.date %>  </h2>
+<h2>  <%= @journal.title %>  </h2>
+<h2>  <%= @journal.content %>  </h2>
+
+
+<br/>
+<%= link_to "Edit Journal", edit_journal_path%>
+<%= link_to "All Journals", journals_path%>
+<br/>
+<%= form_for journal_path(@journal.id), method: "delete" do |f| %>
+    <%= f.submit "Delete" %>
+<% end %>
+<br/>
+<%= link_to "Create Goal", new_goal_path%>

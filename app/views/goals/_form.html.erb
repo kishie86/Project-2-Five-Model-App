@@ -1,0 +1,28 @@
+<% if @goal.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@goal.errors.count, "error") %>
+      prohibited this goal from being saved:
+    </h2>
+
+    <ul>
+    <% @goal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @goal do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+    
+    <%= f.label :journal_id %>
+    <%= f.collection_select :journal_id, Journal.all, :id, :name %>
+    
+    <%= f.submit %>
+  <% end %>
+  <%= link_to "Go Back to Goal", goal_path%>

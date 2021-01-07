@@ -1,0 +1,17 @@
+<h1>A Goal</h1>
+
+<br/>
+
+<h2>  <%= @goal.name %>  </h2>
+<h2>  <%= @goal.description %>  </h2>
+<h2>  <%= @goal.journal_id %>  </h2>
+
+<br/>
+<%= link_to "Edit Goal", edit_goal_path%>
+<%= link_to "All Goals", journals_path%>
+<br/>
+<%= form_for goal_path(@goal.id), method: "delete" do |f| %>
+    <%= f.submit "Delete Goal" %>
+<% end %>
+<br/>
+
