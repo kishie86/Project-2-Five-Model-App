@@ -1,0 +1,6 @@
+<h1>Edit Your Micro Goal! </h1>
+<hr>
+<%= render "form"%>
+<%= form_for @micro_goal, method: :delete do  | f | %>
+    <%= f.submit "Delete" %>
+<% end %>

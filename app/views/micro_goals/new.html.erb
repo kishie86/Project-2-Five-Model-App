@@ -1,10 +1,3 @@
-<h1>This is Micro New Page</h1>
-<%= form_for @micro_goal do |f| %>
-   <%= f.label :deadline %>
-   <%= f.number_field :deadline %>
-   <br>
-   <%= f.label :content %>
-   <%= f.text_area :content%>
-   <br>
-   <%= f.submit%>
-   <% end %>
+<h1>Let's Create a New Micro Goal! </h1>
+<hr>
+<%= render "form"%>

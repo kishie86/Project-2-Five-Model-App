@@ -4,7 +4,7 @@ class MicroGoalsController < ApplicationController
     end
 
     def show
-        @micro_goal = MicroGoal.find(params[:id])
+        @micro_goal = MicroGoal.find_by(params[:id])
     end
 
     def new
@@ -17,7 +17,7 @@ class MicroGoalsController < ApplicationController
     end
 
     def edit
-        @micro_goal = MicroGoal.find(params[:id])
+        @micro_goal = MicroGoal.find_by(params[:id])
     end 
 
     def update

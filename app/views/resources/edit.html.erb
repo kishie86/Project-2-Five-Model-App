@@ -1,0 +1,7 @@
+<h1>Edit Resources</h1>
+<hr>
+<%= render "form" %>
+<br>
+<%= form_for @resource, method: :delete do  | f | %>
+    <%= f.submit "Delete" %>
+<% end %>

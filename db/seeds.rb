@@ -53,7 +53,7 @@ Resource.destroy_all
 
 
 5.times do 
-    username = Faker::Name.unique
+    username = Faker::Name.unique.name
     email = Faker::Internet.email
     password_digest = "123456"
     User.create(username: username, email: email, password_digest: password_digest )
