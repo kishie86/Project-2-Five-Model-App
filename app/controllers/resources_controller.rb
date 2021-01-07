@@ -4,7 +4,8 @@ class ResourcesController < ActionController::Base
     end
 
     def show
-        @resource = Resource.find_by(params[:id])
+        @resource = Resource.find_by(id: params[:id])
+      
     end
 
     def new
