@@ -1,2 +1,9 @@
-<h1>This is a Resource Index Page</h1>
-
+<h1>Click on Name to View User's Suggested Resource </h1>
+<hr>
+<% @resources.each do |resource| %>
+    <h4>
+    
+    <%=link_to resource.user.username, resource_path(resource.user)%>
+    </h4>
+<%end%>
+<h5><%= link_to "Create Resource Form", new_resource_path%></h5>

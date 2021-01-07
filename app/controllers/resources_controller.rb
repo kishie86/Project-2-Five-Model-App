@@ -13,7 +13,7 @@ class ResourcesController < ActionController::Base
 
     def create 
         @resource = Resource.create(resource_params)
-        redirect_to 
+        redirect_to resources_path
     end
 
     def edit
@@ -23,13 +23,13 @@ class ResourcesController < ActionController::Base
     def update
         @resource = Resource.find_by(id: params[:id])
          @resource.update(resource_params)
-         redirect_to 
+         redirect_to resource_path
     end
 
     def destroy
         @resource = Resource.find_by(id: params[:id])
          @resource.destroy
-         redirect_to 
+         redirect_to resources_path
     end
 
     def resource_params

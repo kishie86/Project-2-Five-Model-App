@@ -1,6 +1,6 @@
 <%= form_for @resource do |f| %>
     <%= f.label :user_id %>
-    <%= f.text_field :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :username  %>
     <br>
     <%= f.label :website_domain %>
     <%= f.text_field :website_domain %>
