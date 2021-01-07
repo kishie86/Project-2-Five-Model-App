@@ -4,7 +4,7 @@ class ResourcesController < ActionController::Base
     end
 
     def show
-        @resource = Resource.find(params[:id])
+        @resource = Resource.find_by(params[:id])
     end
 
     def new
@@ -17,7 +17,7 @@ class ResourcesController < ActionController::Base
     end
 
     def edit
-        @resource = Resource.find(params[:id])
+        @resource = Resource.find_by(params[:id])
     end 
 
     def update
