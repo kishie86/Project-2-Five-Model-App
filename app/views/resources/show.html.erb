@@ -1,9 +1,36 @@
-<h1> Show Page Checkout Suggested Resources from Current Users! </h1>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+  background-color: lightblue;
+  
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+
+<h1> <%= @resource.user.username %>'s Suggested Resources </h1>
 <hr>
+<img src = "https://www.eclipsemediasolutions.com/sites/default/files/digital%20media%20icons.jpg" width="550" height="300">
 <h4> Name: <%= @resource.user.username %>  </h4>
 <h4> Website: <%= @resource.website_domain %>  </h4>
+<a href="https://www.nutrisystem.com/jsps_hmr/home/index.jsp?gclid=CjwKCAiAouD_BRBIEiwALhJH6Be_D4mJPF4CJmZzmVGg2pHgDjUg1gNXaDs_5wOFJ6X5PWb57RixvxoCTbIQAvD_BwE&gclsrc=aw.ds" target="_blank"> How to Lose Weight Fast!</a>
 <h4> Notes: <%= @resource.notes %>  </h4>
 
-<%= link_to "Back", resources_path%>
-
+<%= link_to "List of Names", resources_path%>
+<br>
+<%= link_to "Edit Resource", edit_resource_path %>
 

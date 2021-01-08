@@ -1,10 +1,32 @@
-<h1>Click on Name to View User's Suggested Resource </h1>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  background-color: lightblue;
+ 
+}
+
+h1 {
+  color: black;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+
+<h1>Click Name to View Suggested Resources </h1>
 <hr>
+<img src= "https://redeemer-charleston.org/wp-content/uploads/2014/11/books.jpg" >
 <% @resources.each do |resource| %>
-    <h4>
-    
-    <%=link_to resource.user.username, resource_path(resource)%>
-    </h4>
+<h4>
+<%=link_to resource.user.username, resource_path(resource)%>
+</h4>
 <%end%>
 <h5><%= link_to "Create Resource Form", new_resource_path%></h5>
-<%= link_to "Back", goals_path%>

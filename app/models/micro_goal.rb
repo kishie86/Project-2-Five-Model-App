@@ -4,4 +4,6 @@ class MicroGoal < ApplicationRecord
     validates :goal_id, presence: true
     
     belongs_to :goal
+    validates :deadline, presence: true
+    validates :content, presence: true
 end

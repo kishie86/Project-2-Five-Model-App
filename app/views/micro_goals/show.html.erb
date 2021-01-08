@@ -1,5 +1,9 @@
-<h1> Show Page Checkout Suggested Resources from Current Users! </h1>
+<h1> <%= @micro_goal.goal.name%>'s Micro Goals </h1>
+
 <hr>
+<img src= "https://www.incimages.com/uploaded_files/image/1920x1080/getty_158325069_9707599704500267_51544.jpg" width="550" height="300" >
+<h4> 
+
 
 <h4> Dealine: <%= @micro_goal.deadline %>  </h4>
 <h4> Micro Goal: 
@@ -7,9 +11,11 @@
 <br>
 <%= @micro_goal.content %>  </h4>
 
-t.string "deadline"
-t.string "content"
-t.integer "goal_id"
-<br/>
+
+<%= link_to "List of Names", micro_goals_path %>
+
+<%= form_for @micro_goal, method: :delete do  | f | %>
+    <%= f.submit "Delete" %>
+    <% end %>
 <%= link_to "Back", micro_goals_path%>
 <%= link_to "Edit", edit_micro_goal_path%>
