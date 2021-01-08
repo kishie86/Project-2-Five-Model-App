@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # before_action :not_logged_in, only: [:show]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    # add code from Rails Auth @ 43:39 if needed.
   end
 
   # GET /users/new
@@ -31,6 +33,7 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        # look at rails auth @ 46 min if no session works.
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }

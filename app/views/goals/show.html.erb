@@ -8,10 +8,11 @@
 
 <br/>
 <%= link_to "Edit Goal", edit_goal_path%>
-<%= link_to "All Goals", journals_path%>
+<%= link_to "Back", goals_path%>
 <br/>
 <%= form_for goal_path(@goal.id), method: "delete" do |f| %>
     <%= f.submit "Delete Goal" %>
 <% end %>
 <br/>
-
+<%= link_to "All Micro-Goals", micro_goals_path%>
+<%= link_to "All Resources", resources_path%>

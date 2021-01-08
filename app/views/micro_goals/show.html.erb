@@ -12,14 +12,10 @@
 <%= @micro_goal.content %>  </h4>
 
 
-
 <%= link_to "List of Names", micro_goals_path %>
 
 <%= form_for @micro_goal, method: :delete do  | f | %>
     <%= f.submit "Delete" %>
     <% end %>
-
-
-
-
-
+<%= link_to "Back", micro_goals_path%>
+<%= link_to "Edit", edit_micro_goal_path%>

@@ -12,9 +12,17 @@ class JournalsController < ApplicationController
     end
 
     def create
-        @journal = Journal.create(journal_params)
+        # @journal = Journal.create(journal_params)
 
-        redirect_to journals_path
+        # redirect_to journals_path
+
+        @journal = Journal.new(journal_params)
+
+        if @journal.save
+          redirect_to journal_path(@journal)
+        else
+          render :new
+        end
     end
 
     def edit
@@ -23,9 +31,11 @@ class JournalsController < ApplicationController
 
     def update
         @journal = Journal.find_by(id: params[:id])
-        @journal.update(journal_params)
-
-        redirect_to journal_path
+        if @journal.update(journal_params)
+            redirect_to journal_path(@journal)
+        else
+            render :edit
+        end
     end
 
     def destroy
