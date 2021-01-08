@@ -1,6 +1,10 @@
 <%= form_for @micro_goal do |f| %>
+    Select Name
+    <br>
+    <%= f.collection_select :goal_id, Goal.all, :id, :name  %>
+    <br>
     <%= f.label :deadline %>
-    <%= f.number_field :deadline %>
+    <%= f.text_field :deadline %>
     <br>
     <%= f.label :content %>
     <%= f.text_area :content%>
