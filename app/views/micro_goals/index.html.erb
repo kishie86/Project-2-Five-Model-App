@@ -1,2 +1,11 @@
 <h1>This is my Micro Index Page</h1>
 
+<ul>
+<%@micro_goals.each do | g |%>
+    <li>
+        <%= link_to g.content, micro_goal_path(g)%>
+    </li>
+    <%end%>
+</ul>
+
+<%= link_to "Back", goals_path%>
