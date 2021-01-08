@@ -1,2 +1,9 @@
-<h1>This is my Micro Index Page</h1>
-
+<h1>Click Name to View Micro Goals</h1>
+<hr>
+<img src= "https://cdn.shopify.com/s/files/1/3002/1936/files/goal_goals_resolutions_shutterstock_229008130_FEATURED_SW_OCT.jpg?7848098097712032731" > 
+<% @micro_goals.each do |mg| %>
+<h4> 
+<%= link_to mg.goal.name, micro_goal_path(mg) %> 
+</h4>
+<%end%>
+<h5><%= link_to "Create New Micro Goals", new_micro_goal_path%></h5>
